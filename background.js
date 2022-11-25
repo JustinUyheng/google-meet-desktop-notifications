@@ -1,6 +1,13 @@
-let color = '#3aa757';
+// const filter = {
+//   url: [
+//     {
+//       urlMatches: 'https://meet.google.com/*',
+//     },
+//   ],
+// };
 
-chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color });
-  console.log('Default background color set to %cgreen', `color: ${color}`);
-});
+// chrome.webNavigation.onCompleted.addListener(() => {
+  //   console.info("The user has loaded my favorite website!");
+  // }, filter);
+
+  console.log('background');
