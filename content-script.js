@@ -10,12 +10,12 @@ const callback = (mutations) => {
   for (const mutation of mutations) {
     for (const node of mutation.addedNodes) {
       if (node.nodeType === Node.ELEMENT_NODE && (node.matches('.oIy2qc'))) {
-        const user = node.parentNode.parentNode.getAttribute('data-sender-name');
-        const text = node.getAttribute('data-message-text'); 
+        const user = node.parentNode.parentNode.childNodes[0].childNodes[0].textContent;
+        const text = node.childNodes[0].textContent;
         if (user === 'You') {
           return;
         }
-        console.log(user, text);
+        console.log(user, "text:" + text);
         showNotification(user, text);
       }
     }
@@ -31,9 +31,9 @@ observer.observe(document.body, {
 });
 
 const showNotification = (user, text) => {
-  const notification = new Notification('Google Meet Desktop Notifications', {
-    body: `You have received a new message from ${user}! ${text}`,
-    icon: './img/js.png',
+  const notification = new Notification('Google Meet', {
+    body: `${user}: ${text}`,
+    icon: 'chrome.png',
     vibrate: true
   });
 
