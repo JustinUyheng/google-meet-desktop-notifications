@@ -1,7 +1,7 @@
 {
   "name": "Google Meet Desktop Notifications",
   "description": "A Google Chrome extension to display Google Meet desktop notifications",
-  "version": "0.0.0.2",
+  "version": "0.0.0.3",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"

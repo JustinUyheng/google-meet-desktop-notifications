@@ -3,9 +3,6 @@
 // message: oIy2qc
 // username: YTbUzc
 
-// data-sender-name
-// data-message-text
-// || node.matches('.oIy2qc') 
 const callback = (mutations) => {
   for (const mutation of mutations) {
     for (const node of mutation.addedNodes) {
@@ -15,7 +12,6 @@ const callback = (mutations) => {
         if (user === 'You') {
           return;
         }
-        console.log(user, "text:" + text);
         showNotification(user, text);
       }
     }
@@ -31,8 +27,8 @@ observer.observe(document.body, {
 });
 
 const showNotification = (user, text) => {
-  const notification = new Notification('Google Meet', {
-    body: `${user}: ${text}`,
+  const notification = new Notification(`${user}: `, {
+    body: text,
     icon: 'chrome.png',
     vibrate: true
   });
